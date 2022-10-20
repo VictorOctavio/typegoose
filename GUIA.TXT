@@ -1,0 +1,50 @@
+TYPESCRIPT
+-> Install dependencies: tsc-node-dev typescript
+-> Package: scripts{
+   "dev": "ts-node-dev --respawn src/index.ts"
+   "build": "tsc",
+}
+-> Config initial: npx tsc -y
+   tsconfig{
+      outDir: "build",
+      rootDir: "src/index.ts
+   }
+
+CONOCEMOS @TYPEGOOSE
+ -> Configuración basica de typescript
+   ACTIVAR: {
+      experimentalDecorators: true,
+      emitDecoratorMetadata: true
+   }
+ -> Rempleza los schemas por clases
+ 
+ -> Clases tiene docorardor (@props) especifica que se gurada en mongoose tambien -> exporta con @getModelForClass
+ recibe objeto con las configuraciones de mongoose.
+ (@modelOptions) -> opciones de modelado de mongoose
+
+ -> Refs
+ referencias dos documents -> @Ref {propiety: Ref<Clase>}
+
+-> Funciones
+findByName(this: ReturnModelType<typeof Model(User)>, name: string)
+static or not
+
+-> Middlewares
+@pre<User>('save', fuction(){
+   ...
+})
+@post<User>('save', fuction(){
+   ...
+})
+
+MONGODB
+NOS PERMITE TRAER INFORMACION DEL DOCUMENTO Y SUS REFERENCIAS
+MONGODB -> POPULATE('owner', 'name - _id') || ['owner', 'sellers']
+
+NOS PERMITE INSERTAR MULTIPLES DOCUMENTO
+ROLE.INSETMANY([{}, {}]) 
+
+DELETEMANY
+
+
+Video = https://www.youtube.com/watch?v=XqQ4tz0yGJ4&ab_channel=FaztCode
